@@ -15,6 +15,8 @@ function deck_o_cards(is_poker=false) {
 
   cards = shuffle(cards);
 
+  // the following weirdness is so that I can print the number of cards
+  //   BEFORE printing each card as required by assignment
   let handSize = is_poker ? 5 : 1;
   let drawnCards = [];
   for (let i = 0; i < handSize; i++) {
