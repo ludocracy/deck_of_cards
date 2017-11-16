@@ -1,4 +1,5 @@
 from .card import Card
+import random
 
 class Deck():
     SUITS = ['spades', 'clubs', 'diamonds', 'hearts']
@@ -15,6 +16,13 @@ class Deck():
         return cards
 
     def shuffle(self):
+        shuffled_deck = []
+        while self.cards:
+            cards_left = len(self.cards)
+            randomIndex = random.randint(0, cards_left-1) if cards_left > 1 else 0
+            shuffled_deck.append(self.cards[randomIndex])
+            del self.cards[randomIndex]
+        self.cards = shuffled_deck
         return self
 
     def describe(self):
