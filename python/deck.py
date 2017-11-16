@@ -1,4 +1,4 @@
-from card import Card
+from .card import Card
 
 class Deck():
     SUITS = ['spades', 'clubs', 'diamonds', 'hearts']
@@ -9,9 +9,9 @@ class Deck():
 
     def __create_deck(self):
         cards = []
-        for face in FACES:
-            for suit in SUITS:
-                cards.append(Card(suit, face))
+        for face in self.FACES:
+            for suit in self.SUITS:
+                cards.append(Card(face, suit))
         return cards
 
     def shuffle(self):
